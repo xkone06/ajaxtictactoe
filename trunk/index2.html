@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Tic Tac Toe</title>
+	<meta name="generator" content="Studio 3 http://aptana.com/">
+	<meta name="author" content="Mohit Singh Kanwal">
+	<!--Start of Stylesheet/CSS -->
+	<style type = "text/css">
+	td{
+	  text-align:center;
+	  align : center;
+	}
+	</style>
+	<!-- Start of scripting -->
+	<script type = "text/javascript">
+	  var player1 = "player1";
+	  var player2 = "player2";
+	  player1 = prompt("enter player1's name");
+	  player2 = prompt("enter player2's name");
+	  var chance = 0;
+	             //if odd then X else O
+	  function makeMove(squareID)
+	  {
+	    var obj = document.getElementById("square"+squareID);
+	    if(obj.innerHTML!= "X" && obj.innerHTML!="O")
+	       {
+	         if(chance%2==0) obj.innerHTML = "O";
+	         else obj.innerHTML = "X";
+	         chance++;
+	         checkWin();
+	       }
+	    else
+	       alert("Already made the move");
+	  }
+	  
+	  function checkWin()
+	  {
+	    //hard coded for now till I get to know some more 
+	    var squares = new Array(9);
+	    for(var i=0;i<=8;i++)
+	    {
+	      var obj = document.getElementById("square"+i);
+	      squares[i]=obj.innerHTML;
+	    }
+	    
+	    var win = false;
+	    if(squares[0] == squares[1] && squares[1] == squares[2] && (squares[0]=="X" || squares[0]=="O")) win = true;
+	    else if(squares[0] == squares[3] && squares[3] == squares[6] && (squares[0]=="X" || squares[0]=="O")) win = true;
+	    else if(squares[0] == squares[4] && squares[4] == squares[5] && (squares[0]=="X" || squares[0]=="O")) win = true;
+      else if(squares[3] == squares[4] && squares[4] == square5[2] && (squares[3]=="X" || squares[3]=="O")) win = true;
+      else if(squares[6] == squares[7] && squares[7] == squares[8] && (squares[6]=="X" || squares[6]=="O")) win = true;
+      else if(squares[1] == squares[4] && squares[4] == squares[7] && (squares[1]=="X" || squares[1]=="O")) win = true;
+      else if(squares[2] == squares[5] && squares[5] == squares[8] && (squares[2]=="X" || squares[2]=="O")) win = true;
+      else if(squares[2] == squares[4] && squares[4] == squares[6] && (squares[2]=="X" || squares[2]=="O")) win = true;
+      
+      if(win)
+      {
+          if(chance%2==0) alert( player1 + "has won the game");
+          else alert(player2 + "has won the game");
+      }
+      
+	  }
+	</script>
+	<!-- Date: 2010-08-15 -->
+</head>
+<body>
+  <h3>The Game Starts with a Zero</h3>
+<table border = "1%">
+  <center>
+  <tr>
+    <th width ="40px"> T&nbsp </th>
+    <th width ="40px"> I&nbsp </th>
+    <th width ="40px"> C&nbsp </th>
+  </tr>
+  <tr>
+    <td id ="square0" onclick = 'makeMove(0)'>&nbsp;</td>
+    <td id ="square1" onclick = 'makeMove(1)'>&nbsp;</td>
+    <td id ="square2" onclick = 'makeMove(2)'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td id ="square3" onclick = 'makeMove(3)'>&nbsp;</td>
+    <td id ="square4" onclick = 'makeMove(4)'>&nbsp;</td>
+    <td id ="square5" onclick = 'makeMove(5)'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td id ="square6" onclick = 'makeMove(6)'>&nbsp;</td>
+    <td id ="square7" onclick = 'makeMove(7)'>&nbsp;</td>
+    <td id ="square8" onclick = 'makeMove(8)'>&nbsp;</td>
+  </tr>
+  </center>
+</table>
+</body>
+</html>

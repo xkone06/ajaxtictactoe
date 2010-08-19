@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<!-
+/*
+ * Last modified by Mohit Kanwal
+ * Lets do some interesting bit of things, some decision making
+ * ofcourse with the alerts
+ */
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type = "text/javascript">
+          window.onload = writeMessage;
+          function writeMessage()
+          {
+            document.getElementById("helloMessage").
+              innerHTML = "Hello World";
+            if(confirm("Do You like JavaScript"))
+            {
+              alert("welcome you have friends here");
+            } else {
+              alert("You are mad, dunno what javascript can do");
+            }
+            //alert("Welcome to JavaScripting on Mac");
+            var ans = prompt("What is 2+2");
+            if(isNaN(ans))
+            {
+              alert("you entered wrongly");
+            }
+            else
+            {
+              if(parseInt(ans) == 4)
+                alert("correct answer");
+              else
+                alert("never mind u need to study maths");
+            }
+          }
+        </script>
+        <title>Testing of Javascript</title>
+    </head>
+    <body>
+        <div id="helloMessage">
+        </div>
+        <h1>New Web Project Page</h1>
+    </body>
+</html>
