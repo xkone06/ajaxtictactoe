@@ -1,0 +1,1 @@
+Using Purely AJAX functionality and HTML, I hope to create a game of tic tac toe. The game is well known. This is also my hands on to project hosting on Google and also to manage code using svn.
